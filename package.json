@@ -1,19 +1,19 @@
 {
   "name": "homebridge-plugin-name",
-  "displayName": "Plugin Name",
+  "displayName": "Homebridge Vektiva Smarwi",
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "A short description about what your plugin does.",
-  "author": "Your Name",
+  "description": "A plugin to operate Vektiva's Smarwi window opener.",
+  "author": "nikepol",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/USERNAME/GITHUB_PROJECT_NAME#readme",
+  "homepage": "https://github.com/nikepol/homebridge-smarwi#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME.git"
+    "url": "https://github.com/nikepol/homebridge-smarwi.git"
   },
   "bugs": {
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME/issues"
+    "url": "https://github.com/nikepol/homebridge-smarwi/issues"
   },
   "keywords": [
     "homebridge-plugin"
@@ -25,20 +25,27 @@
   },
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "eslint 'src/**/*.{js,ts}'",
     "prepublishOnly": "npm run lint && npm run build",
-    "watch": "npm run build && npm link && nodemon"
+    "watch": "npm run build && npm link && nodemon",
+    "lint:fix": "eslint 'src/**/*.{js,ts}' --fix"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.2.0",
-    "eslint": "^9.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "eslint": "^9.11.0",
     "homebridge": "^2.0.0-beta.0",
     "nodemon": "^3.1.4",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.1"
+    "typescript-eslint": "^8.6.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "hap-nodejs": "^1.1.1-beta.0"
   }
 }
